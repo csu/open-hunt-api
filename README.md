@@ -2,8 +2,9 @@
 An unofficial, read-only API for Open Hunt.
 
 ## Endpoints
-* `/today`: Get items for today
-* `/<date in YYYYMMDD format>`: Get items for specific date
+* `GET /`: Get API information
+* `GET /today`: Get items for today
+* `GET /<date in YYYYMMDD format>`: Get items for specific date
 
 ## Result Format
 ```
