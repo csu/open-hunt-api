@@ -23,4 +23,4 @@ def specific_date(date_string):
       'items': pyopenhunt.get_listings_for_date(date_string)
     })
 
-app.run(debug=True)
+app.run()
