@@ -15,6 +15,25 @@ cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 @cache.cached(timeout=180)
 def index():
     return jsonify({
+      'author': {
+        'name': 'Christopher Su',
+        'url': 'http://christopher.su'
+      },
+      'project': {
+        'name': 'Open Hunt API',
+        'url': 'https://github.com/csu/open-hunt-api'
+      },
+      'base_url': 'http://openhunt.christopher.su',
+      'endpoints': {
+        'today_url': 'http://openhunt.christopher.su/today',
+        'date_url': 'http://openhunt.christopher.su/{date_YYYYMMDD}'
+      }
+    })
+
+@app.route('/today')
+@cache.cached(timeout=180)
+def today():
+    return jsonify({
       'items': pyopenhunt.get_listings_for_date()
     })
 
