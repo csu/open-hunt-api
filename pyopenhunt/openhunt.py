@@ -22,16 +22,17 @@ def get_listings_for_date(date=None):
   items = soup.findAll('div', {'class': ['project-listing', 'item', 'row']})
 
   results = []
+  titles = []
 
   for item in items:
     title_elem = item.find('a', {'class': 'title'})
     title_text = title_elem.text.replace('\n', '')
 
-    if title_text in results:
+    if title_text in titles:
       continue
+    titles.append(title_text)
 
     item_dict = {}
-
 
     try:
       item_dict['title'] = title_text
