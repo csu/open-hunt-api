@@ -16,8 +16,6 @@ def get_listings_for_date(date=None):
       datetime.strptime(date, "%Y%m%d")
     except:
       return {'error': 'Date formatted incorrectly.'}
-
-  return date
   
   url = OPENHUNT_BASE_URL + date
   soup = BeautifulSoup(requests.get(url).content, 'html.parser')
