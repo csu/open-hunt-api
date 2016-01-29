@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from bs4 import BeautifulSoup
+from pytz import timezone
 import requests
 
 OPENHUNT_BASE_URL = 'https://www.openhunt.co/date/'
@@ -8,7 +9,7 @@ OPENHUNT_BASE_URL = 'https://www.openhunt.co/date/'
 def get_listings_for_date(date=None):
   # if no date specified, use today
   if not date:
-    date = datetime.today().strftime("%Y%m%d")
+    date = datetime.now(tz=timezone('US/Pacific')).strftime("%Y%m%d")
   else:
     # validate date
     try:
