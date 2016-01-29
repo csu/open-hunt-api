@@ -26,6 +26,9 @@ def get_listings_for_date(date=None):
 
   for item in items:
     title_elem = item.find('a', {'class': 'title'})
+    if not title_elem:
+      continue
+
     title_text = title_elem.text.replace('\n', '')
 
     if title_text in titles:
