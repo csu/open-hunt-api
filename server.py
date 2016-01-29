@@ -34,7 +34,9 @@ def index():
 @cache.cached(timeout=180)
 def specific_date(date_string):
   if date_string == 'today':
-    date_string = None
+    return jsonify({
+      'items': pyopenhunt.get_listings_for_date()
+    })
 
   return jsonify({
     'items': pyopenhunt.get_listings_for_date(date_string)
