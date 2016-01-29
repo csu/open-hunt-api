@@ -1,3 +1,4 @@
+import argparse
 import os
 
 from flask import Flask, jsonify
@@ -43,5 +44,9 @@ def specific_date(date_string):
   })
 
 if __name__ == "__main__":
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-d', '--debug', action='store_true', help='enable debug mode')
+  args = parser.parse_args()
+
   port = int(os.environ.get("PORT", 5000))
-  app.run(host='0.0.0.0', port=port)
+  app.run(host='0.0.0.0', port=port, debug=args.debug)
