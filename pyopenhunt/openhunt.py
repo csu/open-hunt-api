@@ -37,11 +37,8 @@ def get_listings_for_date(date=None):
     titles.append(title_text)
 
     item_dict = {}
-
-    try:
-      item_dict['title'] = title_text
-    except:
-      item_dict['title'] = 'API error'
+    
+    item_dict['title'] = title_text
 
     try:
       item_dict['href'] = title_elem['href']
