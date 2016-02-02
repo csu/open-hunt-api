@@ -31,10 +31,10 @@ def index():
     'endpoints': {
       'today_url': '%s/today' % BASE_URL,
       'today_rss_url': '%s/today/rss' % BASE_URL,
-      'today_atom_url': '%s/today/atom' % BASE_URL,
+      # 'today_atom_url': '%s/today/atom' % BASE_URL,
       'date_url': '%s/{date_YYYYMMDD}' % BASE_URL,
       'date_rss_url': '%s/{date_YYYYMMDD}/rss' % BASE_URL,
-      'date_atom_url': '%s/{date_YYYYMMDD}/atom' % BASE_URL,
+      # 'date_atom_url': '%s/{date_YYYYMMDD}/atom' % BASE_URL,
     }
   })
 
@@ -95,7 +95,7 @@ def specific_date_rss(date_string):
     return gen_rss(pyopenhunt.get_listings_for_date(), date_string)
   return gen_rss(pyopenhunt.get_listings_for_date(date_string), date_string)
 
-@app.route('/<date_string>/atom')
+# @app.route('/<date_string>/atom')
 @cache.cached(timeout=300)
 def specific_date_atom(date_string):
   if date_string == 'today':
