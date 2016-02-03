@@ -7,8 +7,8 @@ An unofficial, read-only API for Open Hunt.
 * `GET /<date in YYYYMMDD format>`: Get items for specific date
 * `GET /today/rss`: Get items for today as a RSS feed
 * `GET /<date in YYYYMMDD format>/rss`: Get items for specific date as a RSS feed
-* `GET /today/atom`: Get items for today as an Atom feed
-* `GET /<date in YYYYMMDD format>/atom`: Get items for specific date as an Atom feed
+* ~~`GET /today/atom`: Get items for today as an Atom feed~~
+* ~~`GET /<date in YYYYMMDD format>/atom`: Get items for specific date as an Atom feed~~
 
 ## Result Format
 ```
